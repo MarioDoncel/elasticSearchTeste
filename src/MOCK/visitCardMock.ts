@@ -47,7 +47,7 @@ export const visitCardMock2 = {
   persisted: true,
 };
 export const visitCardMock3 = {
-  id: '4',
+  id: '9',
   userId: 'teste',
   name: 'testeName',
   slug: 'testeSlug',
@@ -61,7 +61,7 @@ export const visitCardMock3 = {
   hideLeadCapture: false,
 
   background: 'testeBackground',
-  testimonials: [],
+  testimonials: ['teste', 'teste1', 'teste2'],
   slugs: [],
   fields: [],
 
@@ -71,5 +71,6 @@ export const visitCardMock3 = {
   persisted: true,
 };
 export const visitCardMock4 = {
+  id: '4',
   name: 'Novo nome',
 };

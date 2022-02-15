@@ -5,13 +5,14 @@ export const updateVisitCardService = async (
   newVisitCard: Partial<IVisitCard>
 ) => {
   const { client } = elasticsearch;
-  return client.updateByQuery({
+  if (!newVisitCard.id) throw new Error();
+
+  return client.update({
     index: 'profiles',
     type: 'type_elastic_profiles',
-    query: {
-      match: {
-        industry: 'new',
-      },
+    id: newVisitCard.id,
+    body: {
+      doc: newVisitCard,
     },
   });
 };

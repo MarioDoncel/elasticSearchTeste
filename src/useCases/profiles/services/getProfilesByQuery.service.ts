@@ -7,7 +7,7 @@ export const getProfilesByQueryService = async () => {
     body: {
       query: {
         match: {
-          industry: 'new',
+          testimonials: 'teste',
         },
       },
     },
@@ -15,3 +15,15 @@ export const getProfilesByQueryService = async () => {
 };
 
 // encontra o Mock3, funciona como um LIKE porem apenas com palavras completas
+//  index: 'profiles',
+
+/*  Outro Exemplo */
+// return client.search({
+//   index: 'profiles',
+//   body: {
+//     query: {
+//       match: {
+//         id: '4',
+//       },
+//     },
+//   },

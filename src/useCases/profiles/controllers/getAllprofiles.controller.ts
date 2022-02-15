@@ -9,7 +9,13 @@ export const getAllprofilesController = async (
 ) => {
   try {
     const { from, size } = req.query;
-    const profiles = await getAllProfilesService(Number(from), Number(size));
+
+    const profiles = await getAllProfilesService(
+      Number(from) || 0,
+      Number(size) || 30
+    );
+
+    if (!profiles) throw new Error('Elastic error');
 
     return res.status(200).json(profiles);
   } catch (error) {
